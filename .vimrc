@@ -7,10 +7,16 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-H> <C-W>h<C-W>_
+map <C-L> <C-W>l<C-W>_
+
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+set foldmethod=syntax
 
 syntax enable
 
@@ -31,6 +37,29 @@ colorscheme candycode
 let g:load_doxygen_syntax=1
 set noswapfile
 set nobackup
+
+" NERDTree
+nmap \dir :NERDTreeToggle<CR>
+let NERDTreeHighlightCursorline=1
+let NERDTreeIgnore = ['\.o', '\.so','\.tsk']
+let NERDTreeShowHidden=1
+set updatetime=500
+
+" taglist 
+nmap \tag :TlistToggle<CR>
+
+"ctrlp
+let g:ctrlp_extensions = ['tag']
+
+" easymotion
+let g:EasyMotion_do_mapping = 0
+nmap \s <Plug>(easymotion-s2)
+nmap \h <Plug>(easymotion-linebackward)
+nmap \l <Plug>(easymotion-lineforward)
+nmap \k <Plug>(easymotion-k)
+nmap \j <Plug>(easymotion-j)
+
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 
 set history=3000		" keep 50 lines of command line history
 set number		" show line numbers
@@ -83,3 +112,4 @@ function! GuiTabLabel()
   return label
 endfunction
 set guitablabel=%{GuiTabLabel()}
+source ~/.vim/vundle_config.vim
