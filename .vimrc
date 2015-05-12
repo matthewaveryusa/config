@@ -1,7 +1,5 @@
 nnoremap <S-Insert> "*p
 inoremap jj <Esc>`^
-nnoremap <Esc> <nop>
-inoremap <Esc> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
