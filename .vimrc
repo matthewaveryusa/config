@@ -1,7 +1,7 @@
 nnoremap <S-Insert> "*p
 inoremap jj <Esc>`^
-inoremap <up> <nop>
-inoremap <down> <nop>
+inoremap <up> :lprev
+inoremap <down> :lnext
 inoremap <left> <nop>
 inoremap <right> <nop>
 
@@ -10,9 +10,9 @@ map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
+nnoremap <up> :lprev
+nnoremap <down> :lnext
+noremap <left> <nop>
 nnoremap <right> <nop>
 set foldmethod=syntax
 

@@ -25,6 +25,7 @@ Bundle "honza/vim-snippets"
 
 Bundle 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
+Plugin 'syntastic'
 Plugin 'ctrlp.vim'
 
 "All your Plugins must be added before the following line
