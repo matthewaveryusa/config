@@ -1,19 +1,19 @@
 nnoremap <S-Insert> "*p
 inoremap jj <Esc>`^
-inoremap <up> :lprev
-inoremap <down> :lnext
-inoremap <left> <nop>
-inoremap <right> <nop>
+inoremap <up> :lprev<cr>
+inoremap <down> :lnext<cr>
+inoremap <left> :lclose<cr>
+inoremap <right> :SyntasticCheck<cr>:Errors<cr>
 
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
-nnoremap <up> :lprev
-nnoremap <down> :lnext
-noremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <up> :lprev<cr>
+nnoremap <down> :lnext<cr>
+nnoremap <left> :lclose<cr>
+nnoremap <right> :SyntasticCheck<cr>:Errors<cr>
 set foldmethod=syntax
 
 syntax enable
@@ -33,6 +33,14 @@ set shell=/bin/bash
 set ignorecase
 colorscheme candycode
 let g:load_doxygen_syntax=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 set noswapfile
 set nobackup
 
