@@ -8,16 +8,13 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoredups:erasedups:ignoreboth  # no duplicate entries
+export HISTSIZE=200000                   # big big history
+export HISTFILESIZE=200000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=100000
-HISTFILESIZE=200000
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -92,7 +89,13 @@ alias ..='cd ..'
 alias v='gvim'
 alias x='exit'
 set -o vi
-export PATH=/usr/local/bin:/usr/bin:/bin:~/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:~/bin:~/tools
+
+#Perforce settings
+export P4CONFIG=".perforce"
+export P4EDITOR="vim"
+export P4USER="mavery"
+export P4PORT="rsh:ssh -q -a -x -l p4ssh -q -x perforce.akamai.com /bin/true"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -113,3 +116,11 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+if which keychain > /dev/null; then
+    keychain ~/.ssh/keys/current-internal ~/.ssh/keys/current-external ~/.ssh/keys/current-deployed
+fi
+
+[ -z "$HOSTNAME" ] && HOSTNAME=`uname -n`
+[ -f $HOME/.keychain/$HOSTNAME-sh ] && . $HOME/.keychain/$HOSTNAME-sh
+[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ] && . $HOME/.keychain/$HOSTNAME-sh-gpg

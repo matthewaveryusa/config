@@ -27,7 +27,7 @@ Bundle 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'syntastic'
 Plugin 'ctrlp.vim'
-Plugin 'candycode.vim'
+Plugin 'Solarized'
 
 "All your Plugins must be added before the following line
 call vundle#end()            " required
