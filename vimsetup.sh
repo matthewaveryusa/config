@@ -29,6 +29,4 @@ else
   echo $vundle_config_src >> .vimrc
 fi
 cp .vimrc ~/.vimrc
-mkdir -p ~/.vim/colors 
-cp candycode.vim ~/.vim/colors/
 vim +PluginInstall +qall
