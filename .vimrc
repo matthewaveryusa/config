@@ -14,7 +14,6 @@ nnoremap <up> :lprev<cr>
 nnoremap <down> :lnext<cr>
 nnoremap <left> :lclose<cr>
 nnoremap <right> :SyntasticCheck<cr>:Errors<cr>
-set foldmethod=syntax
 
 syntax enable
 
