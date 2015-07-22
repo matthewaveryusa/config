@@ -15,6 +15,7 @@ nnoremap <down> :lnext<cr>
 nnoremap <left> :lclose<cr>
 nnoremap <right> :SyntasticCheck<cr>:Errors<cr>
 
+
 syntax enable
 
 set guifont=monospace\ 10
@@ -123,3 +124,6 @@ function! GuiTabLabel()
 endfunction
 set guitablabel=%{GuiTabLabel()}
 source ~/.vim/vundle_config.vim
+
+set t_Co=65536
+colorscheme candycode
