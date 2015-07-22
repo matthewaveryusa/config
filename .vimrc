@@ -31,7 +31,6 @@ set shm=A
 set nu
 set shell=/bin/bash
 set ignorecase
-colorscheme candycode
 let g:load_doxygen_syntax=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -124,6 +123,6 @@ function! GuiTabLabel()
 endfunction
 set guitablabel=%{GuiTabLabel()}
 source ~/.vim/vundle_config.vim
-
-set t_Co=65536
-colorscheme candycode
+set t_Co=256
+set background=dark
+colorscheme desert
