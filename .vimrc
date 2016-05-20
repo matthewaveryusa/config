@@ -53,17 +53,6 @@ set updatetime=500
 " taglist 
 nmap \tag :TlistToggle<CR>
 
-"ctrlp
-let g:ctrlp_extensions = ['tag']
-
-" easymotion
-let g:EasyMotion_do_mapping = 0
-nmap \s <Plug>(easymotion-s2)
-nmap \h <Plug>(easymotion-linebackward)
-nmap \l <Plug>(easymotion-lineforward)
-nmap \k <Plug>(easymotion-k)
-nmap \j <Plug>(easymotion-j)
-
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>

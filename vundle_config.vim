@@ -10,23 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
-
-"snipMate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-"Optional:
-Bundle "honza/vim-snippets"
-
+Bundle "Valloric/YouCompleteMe"
 Bundle 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
-Plugin 'syntastic'
-Plugin 'ctrlp.vim'
 
 "All your Plugins must be added before the following line
 call vundle#end()            " required
